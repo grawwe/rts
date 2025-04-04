@@ -1,0 +1,14 @@
+#!/bin/bash
+OUTPUT_FILE="/home/lab2/results/server_info.txt"
+echo -e "\n=== Список запущенных процессов ===" | tee -a "$OUTPUT_FILE"
+ps aux | tee -a "$OUTPUT_FILE"
+echo -e "\n=== Активные сетевые соединения ===" | tee -a "$OUTPUT_FILE"
+ss -tulnp | tee -a "$OUTPUT_FILE"
+echo -e "\n=== Список файлов в каталогах пользователей (/home/) ===" | tee -a "$OUTPUT_FILE"
+find /home/ -type f | tee -a "$OUTPUT_FILE"
+echo -e "\n=== Сетевые интерфейсы ===" | tee -a "$OUTPUT_FILE"
+ip a | tee -a "$OUTPUT_FILE"
+echo -e "\n=== Таблица маршрутизации ===" | tee -a "$OUTPUT_FILE"
+ip route | tee -a "$OUTPUT_FILE"
+echo -e "\n=== Список пользователей системы ===" | tee -a "$OUTPUT_FILE"
+cut -d: -f1 /etc/passwd | tee -a "$OUTPUT_FILE"

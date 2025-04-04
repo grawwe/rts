@@ -5,7 +5,7 @@ set SFTP_HOST "192.168.0.105"         ;# IP-адрес удаленного хо
 set SFTP_USER "egor"               ;# Имя пользователя для подключения
 set SFTP_PASS "1234"                  ;# Пароль пользователя для подключения
 set REMOTE_DIR "/home/egor/"       ;# Директория на удаленном сервере
-set LOCAL_FILE "/home/egor/egor-sh/sftp.txt"            ;# Путь к локальному файлу для загрузки
+set LOCAL_FILE "/home/egor/sftp.txt"            ;# Путь к локальному файлу для загрузки
 
 # === Проверка прав ===
 if {[catch {exec whoami} result]} {
